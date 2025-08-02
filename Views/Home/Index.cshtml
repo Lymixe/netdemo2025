@@ -1,0 +1,55 @@
+﻿@model NETDEMO.Models.JugadorLOL
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="fondo">
+
+<div class="text-center">
+    <h1 class="display-4">Registro de nuevos jugadores de LOL </h1>
+
+</div>
+
+<div>
+    
+    <form asp-action="RegistroJugador" asp-controller="Home" method="post">
+    
+    <fieldset>
+
+    <div>
+        <label for="">
+            Nombre: <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+        </label>
+    </div>    
+    <div>  
+        <label for="">
+            Edad: <input type="number" placeholder="Edad" name="edad" id="edad">
+        </label>
+    </div>  
+    <div>  
+        <label for="">
+            Frecuencia de juego:
+            <select name="frecuencia" id="frecuencia">
+                <option value="Diario">Diario</option>
+                <option value="Diario">Semanal</option>
+                <option value="Diario">Mensual</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label for="">
+            Años de juego: <input type="number" placeholder="Años de juegos" name="añosJ" id="añosJ" >
+        </label>
+    </div>
+    <div> 
+        <button type="submit"> Enviar </button>
+    </div>
+    </form>
+    
+    <p>@ViewData["mensaje"] </p>
+
+    </fieldset>
+
+</div>
+
+</div>
