@@ -1,0 +1,20 @@
+﻿
+@using System.Collections.Generic;
+
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div class="fondo">
+
+<div class="text-center">
+    <h1 class="display-4"> Gracias, tu sugerencia será añadida pronto. </h1>
+
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

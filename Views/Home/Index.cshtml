@@ -1,4 +1,6 @@
-﻿@model NETDEMO.Models.JugadorLOL
+﻿@model NETDEMO.Models.Categoria
+@using System.Collections.Generic;
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,50 +8,59 @@
 <div class="fondo">
 
 <div class="text-center">
-    <h1 class="display-4">Registro de nuevos jugadores de LOL </h1>
+    <h1 class="display-4"> TMDB </h1>
 
 </div>
 
 <div>
     
-    <form asp-action="RegistroJugador" asp-controller="Home" method="post">
+    <form asp-action="MostrarPeliculas" asp-controller="Home" method="post">
     
     <fieldset>
 
-    <div>
-        <label for="">
-            Nombre: <input type="text" placeholder="Nombre" name="nombre" id="nombre">
-        </label>
-    </div>    
+    
     <div>  
-        <label for="">
-            Edad: <input type="number" placeholder="Edad" name="edad" id="edad">
-        </label>
-    </div>  
-    <div>  
-        <label for="">
-            Frecuencia de juego:
-            <select name="frecuencia" id="frecuencia">
-                <option value="Diario">Diario</option>
-                <option value="Diario">Semanal</option>
-                <option value="Diario">Mensual</option>
+        <label for="categoriaP">
+            ¿Qué categoría de pelicula desea ver?
+            <select name="categoriaP" id="categoriaP">
+                <option value="Acción">Acción</option>
+                <option value="Animación">Animación</option>
+                <option value="Terror">Terror</option>
             </select>
         </label>
     </div>
-    <div>
-        <label for="">
-            Años de juego: <input type="number" placeholder="Años de juegos" name="añosJ" id="añosJ" >
-        </label>
-    </div>
+
     <div> 
-        <button type="submit"> Enviar </button>
+        <button type="submit"> Mostrar </button>
     </div>
-    </form>
-    
-    <p>@ViewData["mensaje"] </p>
 
-    </fieldset>
+    <div>
+           <button type="submit"> <a asp-action="Formulario" asp-controller="Home">
+                Siguiente </a></button>
+            
+    </div>
+
+
+@if (ViewData["mensaje"] != null)
+    {
+        <p>@ViewData["mensaje"]</p>
+    }
+
+<div class="lista-peliculas">
+    <ul> 
+ @foreach (var pelicula in Model.Peliculas)
+            {
+                <li>@pelicula.Titulo</li>
+            }
+    </ul>
+</div>
+
+    </fieldset> 
+
+</form>
 
 </div>
 
-</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

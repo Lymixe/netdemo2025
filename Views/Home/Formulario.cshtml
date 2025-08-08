@@ -1,0 +1,31 @@
+﻿@model NETDEMO.Models.Pelicula
+@{
+    ViewData["Title"] = "Agregar Película";
+}
+
+<div class="fondo">
+    <div class="text-center">
+        <h1 class="display-4">Agregar Película</h1>
+    </div>
+    <div>
+        <form asp-action="RegistroPelicula" asp-controller="Home" method="post">
+            <fieldset>
+                <div>
+                    <label for="nombreP">¿Qué película desea agregar?</label>
+                    <input type="text" placeholder="Nombre de la película" name="titulo" id="titulo">
+                </div>
+                <div>
+                    <label for="opcional">¿Por qué desea agregar esa película?</label>
+                    <input type="text" placeholder="Opcional" name="opcional" id="opcional">
+                </div>
+                <div>
+                    <a asp-action="Agradecimiento" asp-controller="Home">
+                    <button type="submit">Enviar</button>
+                    </a>
+                </div>
+
+
+            </fieldset>
+        </form>
+    </div>
+</div>

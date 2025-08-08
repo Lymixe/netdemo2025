@@ -21,7 +21,7 @@ body {
 }
 
 .fondo {
-    background-image: url("lol.jpg");
+    background-image: url("cine.png");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -60,26 +60,19 @@ form label {
     display: block;
     color: #e0e0e0;
     font-weight: bold;
-    margin-bottom: 0.5rem;
 }
 
 form input[type="text"],
-form input[type="number"],
 form select {
     width: 100%;
     padding: 8px;
-    background-color: #1e2a4a;
-    border: 1px solid #4a69e2;
+    background-color: #dea258b3;
+    border: 1px solid #000000;
     border-radius: 6px;
     color: white;
     box-sizing: border-box;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
 
 form button[type="submit"] {
@@ -88,7 +81,7 @@ form button[type="submit"] {
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
-    background-color: #007bff;
+    background-color: #ff8c00;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -96,7 +89,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #ff8c00;
     transform: translateY(-2px);
 }
 
@@ -107,4 +100,12 @@ form button[type="submit"]:hover {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+}
+
+.lista-peliculas li {
+    background-color: #66605bb3; 
+    padding: 12px 15px;
+    margin-bottom: 8px; 
+    border-radius: 6px;
+    color: white;
 }
